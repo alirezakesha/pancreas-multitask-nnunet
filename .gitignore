@@ -1,0 +1,15 @@
+.venv/
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+*.pyc
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
+preprocess_501.log
+
+# Quiz NIfTI data (do not commit)
+train/
+test/
+validation/
+*.nii.gz

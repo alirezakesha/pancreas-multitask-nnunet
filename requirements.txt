@@ -1,0 +1,13 @@
+# Use Python 3.12 (3.13 had no usable PyTorch wheel here)
+# python3.12 -m venv .venv && source .venv/bin/activate
+torch
+torchvision
+nibabel
+matplotlib
+numpy
+jupyter
+ipykernel
+
+# Editable install (clone first):
+# git clone https://github.com/MIC-DKFZ/nnUNet.git
+# pip install -e ./nnUNet
