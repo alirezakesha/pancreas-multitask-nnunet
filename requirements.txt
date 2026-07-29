@@ -1,5 +1,9 @@
 # Use Python 3.12 (3.13 had no usable PyTorch wheel here)
 # python3.12 -m venv .venv && source .venv/bin/activate
+#
+# TITAN Xp / Pascal (SM 6.1) needs cu126 (cuDNN 9.10). Do NOT use cu130 —
+# cuDNN >= 9.11 drops SM < 7.5.
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 torch
 torchvision
 nibabel

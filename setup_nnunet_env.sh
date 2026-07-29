@@ -7,6 +7,10 @@ export nnUNet_raw="${ROOT}/nnUNet_raw"
 export nnUNet_preprocessed="${ROOT}/nnUNet_preprocessed"
 export nnUNet_results="${ROOT}/nnUNet_results"
 
+# TITAN Xp / Pascal (SM 6.1): torch.compile uses Triton, which needs SM >= 7.0
+export nnUNet_compile=false
+
 echo "nnUNet_raw=${nnUNet_raw}"
 echo "nnUNet_preprocessed=${nnUNet_preprocessed}"
 echo "nnUNet_results=${nnUNet_results}"
+echo "nnUNet_compile=${nnUNet_compile}"
