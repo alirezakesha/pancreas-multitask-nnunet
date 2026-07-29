@@ -3,13 +3,27 @@
 __pycache__/
 .DS_Store
 *.pyc
+.mplcache/
+.env
+.env.local
+
+
+# nnU-Net data roots (raw / preprocessed / trained models) — large, never commit
 nnUNet_raw/
 nnUNet_preprocessed/
 nnUNet_results/
-preprocess_501.log
+
+# Run artifacts
+logs/
+wandb/
+*.log
 
 # Quiz NIfTI data (do not commit)
 train/
 test/
 validation/
 *.nii.gz
+
+# Packaged submission
+*_results.zip
+results/predictions/

@@ -1,17 +1,39 @@
-# Use Python 3.12 (3.13 had no usable PyTorch wheel here)
-# python3.12 -m venv .venv && source .venv/bin/activate
+# Python 3.12 (3.13 has no usable PyTorch wheel for this stack).
 #
-# TITAN Xp / Pascal (SM 6.1) needs cu126 (cuDNN 9.10). Do NOT use cu130 —
-# cuDNN >= 9.11 drops SM < 7.5.
-# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
-torch
-torchvision
-nibabel
-matplotlib
-numpy
-jupyter
-ipykernel
+#   python3.12 -m venv .venv && source .venv/bin/activate
+#   pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu126
+#   pip install -r requirements.txt
+#   git clone https://github.com/MIC-DKFZ/nnUNet.git && pip install -e ./nnUNet
+#
+# TITAN Xp / Pascal (sm_61) needs the cu126 build. Do NOT use cu130: cuDNN >=
+# 9.11 drops sm < 7.5. See NOTES.md for the sm_61 verification result.
 
-# Editable install (clone first):
-# git clone https://github.com/MIC-DKFZ/nnUNet.git
-# pip install -e ./nnUNet
+torch==2.13.0
+torchvision==0.28.0
+
+# nnU-Net and its architecture / augmentation stack (installed editable from
+# ./nnUNet, which pulls the four below; pinned here for reproducibility).
+# nnunetv2==2.8.1
+dynamic-network-architectures==0.4.4
+batchgenerators==0.25.3
+batchgeneratorsv2==0.3.5
+acvl-utils==0.2.6
+
+nibabel==5.4.2
+SimpleITK==2.5.5
+numpy==2.4.4
+scipy==1.18.0
+scikit-image==0.26.0
+scikit-learn==1.9.0
+pandas==3.0.5
+
+matplotlib==3.11.1
+seaborn==0.13.2
+graphviz==0.21
+tqdm==4.70.0
+einops==0.8.2
+
+wandb==0.28.1
+
+jupyter==1.1.1
+ipykernel==7.3.0

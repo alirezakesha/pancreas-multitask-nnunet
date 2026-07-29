@@ -1,0 +1,16 @@
+[
+  {
+    "amp": true,
+    "iterations": 20,
+    "seconds_per_iteration_mean": 1.6208011169433596,
+    "seconds_per_iteration_std": 0.010123915925673499,
+    "peak_vram_gib": 6.005187511444092
+  },
+  {
+    "amp": false,
+    "iterations": 20,
+    "seconds_per_iteration_mean": 1.780875061035156,
+    "seconds_per_iteration_std": 0.006191039000067569,
+    "peak_vram_gib": 10.792405128479004
+  }
+]
