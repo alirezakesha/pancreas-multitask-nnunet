@@ -63,11 +63,26 @@ nnUNetv2_plan_and_preprocess -d 501 -pl nnUNetPlannerResEncM --verify_dataset_in
 
 Plans name to use later: `-p nnUNetResEncUNetMPlans`
 
-Example train command (CUDA GPU recommended):
+Example **segmentation-only** train command (CUDA GPU recommended):
 
 ```bash
 nnUNetv2_train 501 3d_fullres 0 -p nnUNetResEncUNetMPlans
 ```
+
+### Multi-task trainer (seg + subtype classification)
+
+Custom code lives in `custom/` (nnU-Net folder is untouched).  
+`setup_nnunet_env.sh` sets `nnUNet_extTrainer` to that folder.
+
+Classification uses **cross-attention pooling** (xattn) over the encoder bottleneck, as suggested in `ReadMe.pdf` (instead of GAP).
+
+```bash
+source .venv/bin/activate
+source setup_nnunet_env.sh
+nnUNetv2_train 501 3d_fullres 0 -p nnUNetResEncUNetMPlans -tr MultiTaskTrainer
+```
+
+Read `custom/MultiTaskTrainer.py` — especially `train_step` — for a commented walkthrough.
 
 ## Explore
 
